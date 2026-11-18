@@ -2,7 +2,7 @@
 
 国立天文台 野辺山宇宙電波観測所の 標準時計の**運用リポジトリ**です。観測所でこの装置群をどう使い、どう保守しているかを集めます。文脈基盤のハブ [nro-context](https://github.com/nobeyama-radio-observatory/nro-context) から参照されます。
 
-扱うもの：標準時計（水素メーザーを基準とする）
+扱うもの：標準時計（水素メーザー、ルビジウム発振器）
 
 ## 位置づけ
 
@@ -32,7 +32,7 @@
 - 主ブランチに直接書き込まず、プルリクエストを出す。AI が作ったものにはラベル `AI作成` を付ける。
 - 事実には出典を添える。出典を示せない事実は仮説として扱う（ハブの判断記録 [0004](https://github.com/nobeyama-radio-observatory/nro-context/blob/main/decisions/0004-事実の根拠は出典で示す.md)）。
 
-担当：未定（決まるまでは、ハブの担当が預かる）
+担当：装置システムグループ（水素メーザーは水沢 VLBI 観測所の管理）（[聞き取り 2026-11-18](https://github.com/nobeyama-radio-observatory/nro-45m-if/blob/main/interviews/2026-11-18.md)）
 
 ## 利用許諾
 

@@ -2,7 +2,7 @@
 # 項目の定義はハブの assets/README.md を参照。
 #   https://github.com/nobeyama-radio-observatory/nro-context/blob/main/assets/README.md
 # 2026-11-18 に、ハブの仮置きの台帳（assets/nro45m.yaml）から移した（判断記録 0006）。
-# 公開資料から AI が埋めた。未記入は聞き取り（interviews/）で埋める。
+# 公開資料から AI が埋め、聞き取り（interviews/）で補った。
 #
 # この台帳にない id の置き場所は、ハブの assets/README.md の資産の索引で引ける。
 #
@@ -13,21 +13,41 @@
 #     書誌の詳細はハブの history/README.md の出典の略記。年次報告と食い違うときは年次報告を採る
 #   技術シンポ2019：https://www2.nao.ac.jp/~open-info/engipromo/draftparts_2019/gk/tecsym19_Miyazawa_Chieko.pdf
 #   聞き取りYYYY-MM-DD(-n) 問N：interviews/YYYY-MM-DD(-n).md の問N
+#   聞き取り2026-11-18 問N：nro-45m-if の interviews/2026-11-18.md の問N（IF 系、連続波、標準時計を続けて聞いたため、記録は nro-45m-if にだけ置く）
+#     https://github.com/nobeyama-radio-observatory/nro-45m-if/blob/main/interviews/2026-11-18.md
 
 - id: time-standard
-  name: 標準時計（水素メーザーを基準とする）
+  name: 標準時計：水素メーザー（水沢 VLBI 観測所の管理）
   kind: 時刻
   part_of: nro45m
   status: 運用中
+  introduced: 前回の故障（十年ほど前か。仮説）を受けて、いまの水素メーザーを水沢 VLBI 観測所が持ち込んで運用している
   maintenance:
     by: 所内、水沢 VLBI 観測所
-    condition: 2023年度に水素メーザー時計が故障して VLBI 観測の提供を止め、電源を修理して復旧。2026年11月に原因不明の時刻のずれがあり、様子を見ている
-    effort: 未記入
-  renewal: 未記入
-  owner_role: 未定
-  maintainers: 未記入
+    condition: >-
+      水沢 VLBI 観測所の管理で、保守を野辺山の装置システムグループが補助している。
+      2023年度に故障して VLBI 観測の提供を止め、電源を修理して2025年の冬までに復旧し、VLBI 観測を提供している。
+      2026年11月に原因不明の時刻のずれがあったが、その後は起きていない。ガス圧が下がっており、ずれと関係している可能性がある（仮説）
+    effort: 小
+  renewal: かなり古いが、更新の予定は立っていない
+  owner_role: 水沢 VLBI 観測所（保守の補助は装置システムグループ）
+  maintainers: 1
   sources:
     - 故障と修理：日本天文学会2025年秋季年会 https://www.asj.or.jp/nenkai/archive/2025b/pdf/V127b.pdf
     - 時刻のずれ：障害情報 Trouble ID 2026-4
     - VLBI 観測の提供の条件：有料望遠鏡時間の案内 https://www.nro.nao.ac.jp/projects/45m/charge-for-the-nobeyama-45-m-telescope-time/ 、プロポーザルの募集 https://www.nro.nao.ac.jp/projects/45m/proposals/calls/
-  note: 単一鏡の観測には影響が小さく、VLBI 観測に影響する。VLBI のバックエンドは、水沢 VLBI 観測所が支援できる場合だけ提供される。HINOTORI-TZ の VLBI モードは調整中で使えない。2023年度の故障の後に VLBI 観測の提供が再開されたかは未確認
+    - 管理と保守の分担、修理の完了、ガス圧、更新の見込み、担い手の数、手間（回答者の見立て）：聞き取り2026-11-18 問5〜問7
+  note: VLBI 観測にはこの水素メーザーが要る。VLBI のバックエンドは、水沢 VLBI 観測所が支援できる場合だけ提供される。HINOTORI-TZ の VLBI モードは調整中で使えない
+
+- id: ts-rubidium
+  name: 標準時計：ルビジウム発振器
+  kind: 時刻
+  part_of: nro45m
+  status: 運用中
+  maintenance: {by: 所内, condition: 未記入, effort: 小}
+  renewal: 未記入
+  owner_role: 装置システムグループ
+  maintainers: 1
+  sources:
+    - 聞き取り2026-11-18 問5、問6
+  note: ルビジウムでは単一鏡の観測はできるが、VLBI はできない。担い手の数と手間は、標準時計全体についての答えを当てはめたもの
